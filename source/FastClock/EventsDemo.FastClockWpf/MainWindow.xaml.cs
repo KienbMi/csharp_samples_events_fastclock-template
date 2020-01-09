@@ -59,5 +59,12 @@ namespace EventsDemo.FastClockWpf
             digitalClock.Owner = this;
             digitalClock.Show();
         }
+
+        private void ButtonCreateViewAnalog_Click(object sender, RoutedEventArgs e)
+        {
+            AnalogClock analogClock = new AnalogClock(_fastClock);
+            analogClock.Owner = this;
+            analogClock.Show();
+        }
     }
 }

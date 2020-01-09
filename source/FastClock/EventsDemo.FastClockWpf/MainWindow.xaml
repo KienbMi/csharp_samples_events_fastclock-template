@@ -40,6 +40,7 @@
         <TextBlock x:Name="TextBlockTime" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="00:00" FontFamily="Segoe UI Black" FontSize="22" HorizontalAlignment="Center" Margin="5"/>
         <CheckBox x:Name="CheckBoxClockRuns" Content="Running" Grid.Column="2" Grid.Row="2" Margin="5" HorizontalAlignment="Center" FontSize="16" Click="CheckBoxClockRuns_Click"/>
         <Button x:Name="ButtonCreateView" Content="Create View" Grid.Column="2" Grid.Row="4" Margin="5" FontFamily="Arial" FontSize="16" Click="ButtonCreateView_Click"/>
+        <Button x:Name="ButtonCreateViewAnalog" Content="Create View Analog" Grid.Column="1" Grid.Row="4" Margin="5" FontFamily="Arial" FontSize="16" Click="ButtonCreateViewAnalog_Click"/>
         <Button x:Name="ButtonSetTime" Content="Set Time" Grid.Column="2" Grid.Row="1" Margin="5,10" Click="ButtonSetTime_Click"/>
     </Grid>
 </controls:MetroWindow>

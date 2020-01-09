@@ -1,0 +1,85 @@
+﻿<Window x:Class="EventsDemo.FastClockWpf.AnalogClock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventsDemo.FastClockWpf"
+        mc:Ignorable="d"
+        Title="AnalogClock" Height="450" Width="425">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF9F3EF" Offset="0.29"/>
+                    <GradientStop Color="#FFDC6918" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Ellipse x:Name="Circle1" Margin="60">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.5,0.159">
+                        <GradientStop Color="#FFF9F9FD" Offset="0"/>
+                        <GradientStop Color="#FF4E429D" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="Circle2" Margin="79">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.475,0.506">
+                        <GradientStop Color="#FFF9F9FD" Offset="0"/>
+                        <GradientStop Color="#FF423791" Offset="1"/>
+                        <GradientStop Color="#FF594FB2"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        <Ellipse x:Name="Circle3" Margin="88">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF9F9FD" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Rectangle x:Name="Minutehand" Height="75" Margin="195,122,197,0" VerticalAlignment="Top" Width="8" RenderTransformOrigin="0.5,1">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE42C5F" Offset="1"/>
+                        <GradientStop Color="#FFE42C5F"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="Hourhand" Height="45" Margin="195,152,197,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1F0091" Offset="1"/>
+                        <GradientStop Color="#FF1F0091"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        <Ellipse x:Name="CentrePoint" Margin="185">
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF9F9FD" Offset="0"/>
+                        <GradientStop Color="#FF21076C" Offset="1"/>
+                        <GradientStop Color="#FF4800B6"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="CentrePoint_Copy" Margin="197" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF9F9FD" Offset="0"/>
+                        <GradientStop Color="#FFB60043" Offset="1"/>
+                        <GradientStop Color="#FFB60043"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+</Window>
