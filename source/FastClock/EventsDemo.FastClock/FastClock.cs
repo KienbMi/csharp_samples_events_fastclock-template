@@ -5,5 +5,6 @@ namespace EventsDemo.FastClock
 {
     public class FastClock
     {
+
     }
 }
