@@ -7,9 +7,18 @@ namespace EventsDemo.FastClockWpf
     /// </summary>
     public partial class DigitalClock
     {
-        public DigitalClock()
+        private EventsDemo.FastClock.FastClock _fastClock;
+        
+        public DigitalClock(FastClock.FastClock fastClock)
         {
             InitializeComponent();
+            _fastClock = fastClock;
+            _fastClock.OnMinuteIsOver += FastClockOneMinuteIsOver;
+        }
+
+        private void FastClockOneMinuteIsOver(object sender, DateTime e)
+        {
+            TextBlockClock.Text = e.ToShortTimeString();
         }
 
         private void Window_Initialized(object sender, EventArgs e)
