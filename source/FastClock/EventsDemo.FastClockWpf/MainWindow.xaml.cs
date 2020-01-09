@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using EventsDemo.FastClock;
 
 namespace EventsDemo.FastClockWpf
 {
@@ -8,6 +9,8 @@ namespace EventsDemo.FastClockWpf
     /// </summary>
     public partial class MainWindow
     {
+        private EventsDemo.FastClock.FastClock _fastClock;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -17,8 +20,11 @@ namespace EventsDemo.FastClockWpf
         {
             DatePickerDate.SelectedDate = DateTime.Today;
             TextBoxTime.Text = DateTime.Now.ToShortTimeString();
+            _fastClock = EventsDemo.FastClock.FastClock.Instance;
+            _fastClock.OnMinuteIsOver += FastClockOneMinuteIsOver;
         }
 
+      
         private void ButtonSetTime_Click(object sender, RoutedEventArgs e)
         {
         }
@@ -29,10 +35,13 @@ namespace EventsDemo.FastClockWpf
 
         private void FastClockOneMinuteIsOver(object sender, DateTime fastClockTime)
         {
+            TextBlockTime.Text = fastClockTime.ToShortTimeString();
+            TextBlockDate.Text = fastClockTime.ToShortDateString();
         }
 
         private void CheckBoxClockRuns_Click(object sender, RoutedEventArgs e)
         {
+            _fastClock.IsRunning = CheckBoxClockRuns.IsChecked == true;
         }
 
         private void ButtonCreateView_Click(object sender, RoutedEventArgs e)
