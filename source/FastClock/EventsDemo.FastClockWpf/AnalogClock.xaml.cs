@@ -19,9 +19,30 @@ namespace EventsDemo.FastClockWpf
     /// </summary>
     public partial class AnalogClock : Window
     {
-        public AnalogClock(FastClock.FastClock _fastClock)
+        private EventsDemo.FastClock.FastClock _fastClock;
+
+        RotateTransform MinHandTr;
+        RotateTransform HourHandTr;
+
+        public AnalogClock(FastClock.FastClock fastClock)
         {
             InitializeComponent();
+
+            _fastClock = fastClock;
+            _fastClock.OnMinuteIsOver += FastClockOneMinuteIsOver;
+            // Create an instance of RotateTransform objects
+            MinHandTr = new RotateTransform();
+            HourHandTr = new RotateTransform();
+        }
+
+
+
+        private void FastClockOneMinuteIsOver(object sender, DateTime e)
+        {
+            MinHandTr.Angle = (e.Minute * 6);
+            HourHandTr.Angle = (e.Hour * 30) + (e.Minute * 0.5);
+            Minutehand.RenderTransform = MinHandTr;
+            Hourhand.RenderTransform = HourHandTr;
         }
     }
 }
